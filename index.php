@@ -1,3 +1,10 @@
+<?php
+// include "class/Dbase.php";
+require "class/Ajouteur.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,29 +15,33 @@
     <title>Document</title>
 </head>
 <body>
+
+
+   
+
     <div class="container-fluid">
         <table class="table">
             <head>Nos Produits</head>
           <div class="container">
             <a  class="btn btn-info" href="ajou.php">ajouteur</a>
         </div>
-           
+        
           
             
             <thead>
                 <tr>
-                    <th>*</th>
-                    <th>Désignation</th>
+                    <th>id</th>
+                    <th>Nom</th>
                     <th>prix</th>
                     <th>stock</th>
                 </tr>
-                <tfoot>
-                    <th>1</th>
-                    <th>clavier</th>
-                    <th>15000</th>
-                    <th>20</th>
-                </tfoot>
             </thead>
+            <tbody>
+            <?php
+            $data = new Ajouteur();
+            $data->SelectAll();
+            ?>
+            </tbody>
 
 
         </table>

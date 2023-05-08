@@ -8,8 +8,10 @@ class Dbase{
 
     public function __construct()
     {
-        $this->pdo= new PDO("mysql:host={$this->dns}; dbname={$this->dbname} ",$this->username,$this->password);
+        $this->pdo= new PDO("mysql:host={$this->dns}; dbname={$this->dbname};charset=utf8",$this->username,"");
     }
+
+    
    public function getPdo() {
 
     return $this->pdo;
