@@ -17,34 +17,38 @@ class Ajouteur extends Dbase
       $data= $this->getPdo()->prepare("INSERT INTO `products`(`nom`, `prix`, `stock`) VALUES (?,?,?)");
       $data->execute(array($n,$p,$s));
 
+      header("Location: index.php");
+
 
    }
 
    public function SelectAll()
-   {
-      $select = $this->getPdo()->prepare("SELECT * FROM products");
-      $select->execute();
+{
+    $select = $this->getPdo()->prepare("SELECT * FROM products");
+    $select->execute();
+  
+    while($donnee = $select->fetch(PDO::FETCH_OBJ)) {
+        $id = $donnee->id;
+        $nom = $donnee->nom;
+        $prix = $donnee->prix;
+        $stock = $donnee->stock;
+    
+        echo "<tr>
+                  <td>$id</td>
+                  <td>$nom</td>
+                  <td>$prix</td>
+                  <td>$stock</td>
+              </tr>";
+    }
+}
 
-      $donnee=$select->fetch(PDO::FETCH_OBJ);
-      $id = $donnee->id;
-      $nom = $donnee->nom;
-      $prix = $donnee->prix;
-      $stock = $donnee->stock;
-
-      // echo $nom.$prix.$stock;
-      echo"
-      <tr>
-          <td>$id</td>
-          <td>$nom</td>
-          <td>$prix</td>
-          <td>$stock</td>
-      </tr>";
+    
       // var_dump($donnee);
    }
-
+   
   
 
-}
+
 
     
    
