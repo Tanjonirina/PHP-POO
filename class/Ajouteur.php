@@ -1,5 +1,5 @@
 <?php
-require "Dbase.php";
+require_once "Dbase.php";
 
 class Ajouteur extends Dbase
 {
