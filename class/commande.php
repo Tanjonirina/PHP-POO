@@ -13,6 +13,7 @@ class commande{
         $db = newDbase();
         $sql->$db->getpdo()->prepare('INSERT INTO facture(numero,nombre) VALUES (?,?)');
         $sql->execute(array($this->num_P,$this->nbr_p));
+        $sql->execute(array($this->num_P,$this->nbr_p));(2)
     }
 }
 

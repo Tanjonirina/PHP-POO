@@ -23,7 +23,6 @@ require "class/Ajouteur.php";
             
           <div class="container">
             <a  class="btn btn-info" href="ajou.php">ajouteur</a>
-            <a  class="btn btn-info" href="ajou.php">ajouteur2</a>
         </div>
         
           
