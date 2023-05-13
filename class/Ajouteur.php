@@ -19,6 +19,7 @@ class Ajouteur extends Dbase
 
       header("Location: index.php");
 
+      
 
    }
 

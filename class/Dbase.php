@@ -1,5 +1,6 @@
 <?php
-class Dbase{
+class Dbase {
+    
     private $pdo;
     protected $dns="localhost";
     protected $dbname="produits";
